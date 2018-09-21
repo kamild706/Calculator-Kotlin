@@ -9,5 +9,5 @@ enum class TokenType {
     POW,
     LEFT_PARENTHESIS,
     RIGHT_PARENTHESIS,
-    EOI
+    END_OF_INPUT
 }

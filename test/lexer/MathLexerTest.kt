@@ -4,14 +4,14 @@ import org.junit.Test
 
 import org.junit.Assert.assertEquals
 
-class LexerTest {
+class MathLexerTest {
 
     private fun tokenize(input: String, expectedOutput: Array<String>) {
-        val lexer = Lexer(input)
+        val lexer = MathLexer(input)
         var token = lexer.nextToken()
         var index = 0
 
-        while (token.type !== TokenType.EOI) {
+        while (token.type !== TokenType.END_OF_INPUT) {
             assertEquals(token.value, expectedOutput[index++])
             token = lexer.nextToken()
         }

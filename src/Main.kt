@@ -1,5 +1,5 @@
 import lexer.*
-import parser.Parser
+import parser.MathParser
 import java.util.*
 
 fun main(args: Array<String>) {
@@ -7,14 +7,10 @@ fun main(args: Array<String>) {
     while (true) {
         print("calc> ")
         val input = scanner.nextLine()
-        val lexer = Lexer(input)
-        val parser = Parser(lexer)
+        val lexer = MathLexer(input)
+        val parser = MathParser(lexer)
         val expression = parser.parse()
-        expression.printStructure(0)
-        /*var token = lexer.nextToken()
-        while (token.type != TokenType.EOI) {
-            println(token.value)
-            token = lexer.nextToken()
-        }*/
+        expression.printStructure()
+        println(expression.evaluate())
     }
 }

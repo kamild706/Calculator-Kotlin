@@ -1,3 +1,8 @@
 package parser
 
-class SyntaxException(message: String) : RuntimeException(message)
+import lexer.Token
+import lexer.TokenType
+
+class SyntaxException(token: Token, vararg expected: TokenType) : RuntimeException(
+        "Found token '${token.value}' at position ${token.position + 1} " +
+                "but expected ${expected.joinToString(" OR ")}")

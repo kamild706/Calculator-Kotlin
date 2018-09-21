@@ -1,4 +1,4 @@
-package parser
+package parser.mathexpression
 
 abstract class BinaryOperation(val leftOperand: Expression, val rightOperand: Expression) : Operation() {
     override fun printStructure(indentation: Int) {

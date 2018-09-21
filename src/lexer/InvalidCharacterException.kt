@@ -1,3 +1,4 @@
 package lexer
 
-class InvalidCharacterException(message: Char?) : RuntimeException("\"$message\"")
+class InvalidCharacterException(character: Char?, position: Int) :
+        RuntimeException("Unrecognized character '$character' at position ${position + 1}")

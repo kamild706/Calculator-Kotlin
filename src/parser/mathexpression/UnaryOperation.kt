@@ -1,4 +1,4 @@
-package parser
+package parser.mathexpression
 
 abstract class UnaryOperation(val operand: Expression) : Operation() {
 
